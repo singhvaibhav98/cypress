@@ -32,4 +32,4 @@ _npx cypress run --reporter mochawesome_
 ![Alt text](image-1.png)
 
 #### Issues
-Add to cart button not working even manually in browser window.
+Add to cart button not working even manually in cypress browser window.
