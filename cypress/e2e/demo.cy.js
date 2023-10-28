@@ -3,6 +3,7 @@ import Components from '../Components/Components'
 import globalData from '../fixtures/global.json'
 import testData from '../fixtures/test.json'
 
+//Test cases
 describe('Automation Practice Tests', () => {
   it('Test Case 1: Register User', () => {
     const cp = new Components()
@@ -39,7 +40,7 @@ describe('Automation Practice Tests', () => {
     cp
       .com_openurl(globalData.url)
       .com_verify_products_page()
-      .com_add_to_cart_product_detail_page()
+      .com_add_to_cart_product_page()
   })
   it('Test Case 13: Verify Product quantity in Cart', () => {
     const cp = new Components()

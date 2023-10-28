@@ -20,6 +20,7 @@ _This contains all the test cases, the test cases are calling component flows_
 
 - pages/**.js
 _These js files contains page elements with other details such as an alias to identify the element in report and page name. We have option to use cy.get or cy.xpath as well to identify and allocate the elements_
+
 - support/command.js
 _This contains custom wrapper and utilities methods to take action and log in report as well_
 

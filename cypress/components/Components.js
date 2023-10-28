@@ -4,7 +4,12 @@ import Login_Registration_Page from '../pages/Login_Registration_Page';
 import Products_Details_Page from '../pages/Products_Details_Page';
 import Products_Page from '../pages/Products_Page';
 import Registration_Page from '../pages/Registration_Page';
+// ***********************************************************
+// This class contains reusable flow of the application
+// Making calls to commands and using page objects and test data
+// ***********************************************************
 class Components {
+    //Launch url and verify landed on page
     com_openurl(appURL) {
         cy.logMessage("Visit Automation Excercise website")
         cy.visit(appURL)
@@ -12,6 +17,8 @@ class Components {
         cy.verifyVisible(home_page.img_site_logo());
         return this;
     }
+
+    //User registration flow
     com_registraion(registrationData) {
         const home_page = new Home_Page();
         cy.clickOnElement(home_page.button_login_register());
@@ -46,17 +53,23 @@ class Components {
         cy.clickOnElement(registration_page.button_signup_continue());
         return this;
     }
+
+    //Delete account flow
     com_delete_account() {
         const home_page = new Home_Page();
         cy.clickOnElement(home_page.button_delete_account());
         cy.clickOnElement(home_page.button_continue());
         return this;
     }
+
+    //Logout flow
     com_logout() {
         const home_page = new Home_Page();
         cy.clickOnElement(home_page.button_logout());
         return this;
     }
+
+    //Login flow
     com_login(registrationData) {
         const home_page = new Home_Page();
         cy.clickOnElement(home_page.button_login_register());
@@ -67,6 +80,7 @@ class Components {
         return this;
     }
 
+    //Verify product page to have multiple products
     com_verify_products_page() {
         const home_page = new Home_Page();
         cy.clickOnElement(home_page.button_products());
@@ -76,6 +90,7 @@ class Components {
         return this;
     }
 
+    //Navigate and verify product detail page of first item
     com_validate_first_item_product_detail_page() {
         const products_page = new Products_Page();
         cy.getFirstItem(products_page.list_products()).then(locator => {
@@ -92,7 +107,8 @@ class Components {
         return this;
     }
 
-    com_add_to_cart_product_detail_page() {
+    //Add to cart from product detail page
+    com_add_to_cart_product_page() {
         const products_page = new Products_Page();
         cy.hover(products_page.text_products_title(1));
         cy.clickNoScroll(products_page.button_add_to_cart(1));
@@ -103,6 +119,7 @@ class Components {
         return this;
     }
 
+    //Search and verify search result items
     com_searchAndVerifyProductList(searchItem) {
         const products_page = new Products_Page();
         cy.typeText(products_page.text_searchbox(), searchItem);
@@ -110,6 +127,7 @@ class Components {
         cy.verifyContains(products_page.list_products_title(), searchItem);
     }
 
+    //Add to cart from product detail page
     com_add_product(quantity) {
         const products_details_page = new Products_Details_Page();
         cy.typeText(products_details_page.text_quantity(), quantity);
