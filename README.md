@@ -10,9 +10,9 @@
 - Test Case 13: Verify Product quantity in Cart
 
 #### Folder Structure
-![Alt text](image.png)
+![Alt text](image-2.png)
 
-- Components/Components.js
+- components/Components.js
 _This contains reusable flows of the application such as com_openurl, com_registraion, com_delete_account etc. These flows internally calls action methods from support/command.js and operate action of page elements from pages folder_
 
 - e2e/demo.cy.js
