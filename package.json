@@ -2,14 +2,13 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "build": "^0.1.4",
-    "cypress-real-events": "^1.10.3",
-    "start": "^5.1.0"
+    "cypress-real-events": "^1.10.3"
   },
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "allure-commandline": "^2.24.1",
+    "build": "^0.1.4",
     "cypress": "^13.4.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-mochawesome-reporter": "^3.6.1",
@@ -21,7 +20,8 @@
     "mochawesome-report-generator": "^6.2.0",
     "multiple-cucumber-html-reporter": "^3.5.0",
     "node": "^21.1.0",
-    "npm": "^10.2.2"
+    "npm": "^10.2.2",
+    "start": "^5.1.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
