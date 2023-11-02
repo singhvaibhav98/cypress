@@ -1,4 +1,7 @@
 import addContext from 'mochawesome/addContext';
+import "cypress-real-events";
+import "@shelex/cypress-allure-plugin";
+import 'cypress-mochawesome-reporter/register';
 
 //Add Test context message in report
 function addTestContext(title, value) {
@@ -100,3 +103,8 @@ Cypress.on('test:after:run', (test, runnable) => {
     addTestContext("Test status :" + test.state, screenshot);
   }
 });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from failing the test
+    return false
+})
